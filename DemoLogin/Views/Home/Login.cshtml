@@ -1,0 +1,31 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="d-flex justify-content-center align-items-center">
+    <form method="POST" asp-controller="Home" asp-action="Login" class="row w-50">
+        <h2 class="text-center my-4">Login Form</h2>
+        <div class="mb-3">
+            <label asp-for="UserName" class="form-label">UserName</label>
+            <input asp-for="UserName" type="text" class="form-control" aria-describedby="UserName textbox">
+            <div class="form-text text-danger">
+                <span asp-validation-for="UserName"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" type="password" class="form-control" aria-describedby="Password textbox">
+            <div class="form-text text-danger">
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-text text-primary">UserName: Admin ; Password: 123456</div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
